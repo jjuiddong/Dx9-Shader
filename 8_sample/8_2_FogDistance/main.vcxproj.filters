@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Application Files">
+      <UniqueIdentifier>{a75a9856-da6b-46fe-8d77-1d2eff29c315}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework Files">
+      <UniqueIdentifier>{4046a34a-456d-4170-b215-6b9bc8a0a2cb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="hlsl.fx">
+      <Filter>Application Files</Filter>
+    </None>
+    <None Include="DirectX.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Application Files</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\d3dapp.cpp">
+      <Filter>Framework Files</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\d3denumeration.cpp">
+      <Filter>Framework Files</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\d3dfile.cpp">
+      <Filter>Framework Files</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\d3dfont.cpp">
+      <Filter>Framework Files</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\d3dsettings.cpp">
+      <Filter>Framework Files</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\d3dutil.cpp">
+      <Filter>Framework Files</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\dxutil.cpp">
+      <Filter>Framework Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>Application Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\d3dapp.h">
+      <Filter>Framework Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\d3denumeration.h">
+      <Filter>Framework Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\d3dfile.h">
+      <Filter>Framework Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\d3dfont.h">
+      <Filter>Framework Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\d3dsettings.h">
+      <Filter>Framework Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\d3dutil.h">
+      <Filter>Framework Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\dxutil.h">
+      <Filter>Framework Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="main.rc" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,73 @@
+//-------------------------------------------------------------
+// File: main.h
+//
+// Desc: HLSL샘플
+//-------------------------------------------------------------
+#pragma once
+
+
+
+
+//-------------------------------------------------------------
+// 정의 & 상수
+//-------------------------------------------------------------
+// 입력데이터를 보존할 구조체
+struct UserInput
+{
+    BOOL bRotateUp;
+    BOOL bRotateDown;
+    BOOL bRotateLeft;
+    BOOL bRotateRight;
+    BOOL bZ;
+    BOOL bX;
+    BOOL bA;
+    BOOL bS;
+};
+
+
+
+
+//-------------------------------------------------------------
+// Name: class CMyD3DApplication
+// Desc: 어플리케이션 클래스
+//-------------------------------------------------------------
+class CMyD3DApplication : public CD3DApplication
+{
+	LPD3DXEFFECT					m_pEffect;	// 셰이더
+	D3DXHANDLE						m_hTechnique;// 테크닉
+	D3DXHANDLE						m_hmWVP;	// 월드~투영행렬
+	LPDIRECT3DVERTEXDECLARATION9	m_pDecl;	// 정점선언
+
+	CD3DMesh						*m_pMesh;	// 모델
+
+	D3DXMATRIX						m_mWorld;	// 월드 행렬
+	D3DXMATRIX						m_mView;	// 뷰 행렬
+	D3DXMATRIX						m_mProj;	// 투영 행렬
+
+    FLOAT						m_fWorldRotX;	// X축회전
+    FLOAT						m_fWorldRotY;	// Y축회전
+
+	BOOL						m_bLoadingApp;	// 로드중?
+    CD3DFont*					m_pFont;		// 폰튼
+    UserInput					m_UserInput;	// 입력데이터
+	
+protected:
+    virtual HRESULT OneTimeSceneInit();
+    virtual HRESULT InitDeviceObjects();
+    virtual HRESULT RestoreDeviceObjects();
+    virtual HRESULT InvalidateDeviceObjects();
+    virtual HRESULT DeleteDeviceObjects();
+    virtual HRESULT Render();
+    virtual HRESULT FrameMove();
+    virtual HRESULT FinalCleanup();
+    virtual HRESULT ConfirmDevice(D3DCAPS9*, DWORD, D3DFORMAT);
+
+    HRESULT RenderText();
+
+    void    UpdateInput( UserInput* pUserInput );
+public:
+    LRESULT MsgProc( HWND hWnd, UINT msg
+					, WPARAM wParam, LPARAM lParam );
+    CMyD3DApplication();
+    virtual ~CMyD3DApplication();
+};
